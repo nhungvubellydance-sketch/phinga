@@ -525,6 +525,11 @@
     let currentProduct = { name: 'Khóa Thiện Nguyện "Phi Dục"', price: 1000000, memo: 'PHIDUC' };
     let currentAccount = 'nhung';
 
+    const notifyEmails = {
+      primary: 'nhungvubellydance@gmail.com',
+      cc: 'trang116.hanu@gmail.com'
+    };
+
     const accounts = {
       nhung: {
         bankCode: 'VCB',
@@ -540,9 +545,46 @@
       }
     };
 
-    function handleLeadSubmit(e) {
+    async function handleLeadSubmit(e) {
       e.preventDefault();
-      document.getElementById('leadModal').classList.remove('hidden');
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = 'Đang xử lý & gửi thông báo...';
+      submitBtn.disabled = true;
+
+      const name = document.getElementById('lead_name').value;
+      const email = document.getElementById('lead_email').value;
+      const phone = document.getElementById('lead_phone').value;
+
+      try {
+        // Bắn email thông báo tự động về cả 2 Gmail: nhungvubellydance & trang116.hanu
+        await fetch(`https://formsubmit.co/ajax/${notifyEmails.primary}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `[phinga.net] Độc giả mới nhận Phi Book: ${name}`,
+            _cc: notifyEmails.cc,
+            _template: 'table',
+            _captcha: 'false',
+            'Họ và Tên': name,
+            'Email': email,
+            'Số điện thoại (Zalo)': phone,
+            'Quà tặng': 'Ebook Phi Book — Phi Ngã Khai Sáng Vô Thức',
+            'Thời gian đăng ký': new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }),
+            'Nguồn': 'Website phinga.net'
+          })
+        });
+      } catch (err) {
+        console.log('Lead notification sent:', err);
+      } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+        document.getElementById('leadModal').classList.remove('hidden');
+      }
     }
 
     function closeLeadModal() {
