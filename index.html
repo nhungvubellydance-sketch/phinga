@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi" class="scroll-smooth" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,76 +9,135 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* BẢNG MÀU CHỦ ĐẠO TỰ ĐỘNG CHUYỂN ĐỔI SÁNG / TỐI */
+    :root, [data-theme="dark"] {
+      --bg-page: #0E0C0A;
+      --bg-dots: #26201A;
+      --bg-nav: rgba(19, 17, 14, 0.95);
+      --bg-card: #181512;
+      --bg-card-alt: #1F1B17;
+      --bg-card-highlight: #231B1C;
+      --bg-input: #12100D;
+      --bg-section-alt: #13110E;
+      --text-main: #F3ECE1;
+      --text-muted: #CDC2B4;
+      --text-sub: #9E9080;
+      --border-main: #2E2822;
+      --border-highlight: #453B32;
+      --accent-crimson: #E64A5A;
+      --accent-crimson-bg: rgba(230, 74, 90, 0.15);
+      --accent-jade: #3DB89A;
+      --accent-jade-bg: rgba(61, 184, 154, 0.15);
+      --accent-gold: #E5B54F;
+      --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="light"] {
+      --bg-page: #FAF7F0;
+      --bg-dots: #E8DFC9;
+      --bg-nav: rgba(255, 254, 250, 0.95);
+      --bg-card: #FFFEFA;
+      --bg-card-alt: #F4EFE4;
+      --bg-card-highlight: #FFF;
+      --bg-input: #FAF7F0;
+      --bg-section-alt: #F4EFE4;
+      --text-main: #26201B;
+      --text-muted: #594C40;
+      --text-sub: #7A6B5C;
+      --border-main: #E6DDC8;
+      --border-highlight: #D8CCB5;
+      --accent-crimson: #8F1C28;
+      --accent-crimson-bg: rgba(143, 28, 40, 0.08);
+      --accent-jade: #234E43;
+      --accent-jade-bg: rgba(35, 78, 67, 0.08);
+      --accent-gold: #C68E2F;
+      --shadow-card: 0 4px 20px -2px rgba(90, 70, 45, 0.05);
+    }
+
     body { 
       font-family: 'Plus Jakarta Sans', sans-serif; 
-      background-color: #FAF7F0;
-      color: #2D2723;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     .serif-display { font-family: 'Cormorant Garamond', serif; }
     .serif-title { font-family: 'Playfair Display', serif; }
     
-    /* Vintage Paper Texture & Styling */
+    /* Hiệu ứng nền giấy parchment / bóng đêm */
     .bg-parchment {
-      background-color: #FAF7F0;
-      background-image: radial-gradient(#E8DFC9 0.75px, transparent 0.75px);
+      background-color: var(--bg-page);
+      background-image: radial-gradient(var(--bg-dots) 0.75px, transparent 0.75px);
       background-size: 20px 20px;
     }
     .vintage-card {
-      background: #FFFEFA;
-      border: 1px solid #E6DDC8;
-      box-shadow: 0 4px 20px -2px rgba(90, 70, 45, 0.05);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-main);
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
     }
     .vintage-border {
-      border: 1px solid #CDBFA8;
-      outline: 3px solid #FAF7F0;
+      border: 1px solid var(--border-highlight);
+      outline: 3px solid var(--bg-page);
       outline-offset: -5px;
     }
   </style>
 </head>
-<body class="bg-parchment antialiased selection:bg-rose-100 selection:text-rose-950 pb-20">
+<body class="bg-parchment antialiased selection:bg-rose-900 selection:text-rose-100 pb-20">
 
   <!-- TOP BAR: THÔNG BÁO VINTAGE -->
-  <div class="bg-[#26201B] text-[#D8CEBC] text-xs py-2.5 px-4 text-center border-b border-[#3D352E] flex items-center justify-center gap-2">
+  <div class="bg-[#0A0908] text-[#D8CEBC] text-xs py-2.5 px-4 text-center border-b border-[#231E19] flex items-center justify-center gap-2">
     <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#E5B54F] animate-pulse"></span>
     <span class="tracking-wide">Tặng Phẩm Độc Quyền: Ebook <strong>"Phi Ngã — Khai Sáng Vô Thức"</strong> • Tác Giả <strong>Nguyễn Anh Thái</strong></span>
-    <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="hidden sm:inline-flex items-center gap-1 ml-3 px-3 py-0.5 rounded-full bg-[#234E43] hover:bg-[#1A3B33] text-stone-100 font-semibold transition text-[11px] border border-[#3E6F62]">
+    <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="hidden sm:inline-flex items-center gap-1 ml-3 px-3 py-0.5 rounded-full bg-[#1E3B33] hover:bg-[#2A5247] text-stone-100 font-semibold transition text-[11px] border border-[#3E6F62]">
       💬 Tham Gia Nhóm Zalo
     </a>
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="bg-[#FFFEFA]/95 backdrop-blur-md sticky top-0 z-40 border-b border-[#E6DDC8] shadow-sm">
+  <nav class="sticky top-0 z-40 border-b backdrop-blur-md shadow-sm transition-colors duration-300" style="background-color: var(--bg-nav); border-color: var(--border-main);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
+      
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3">
         <span class="w-10 h-10 rounded-full bg-[#8F1C28] text-[#FDF9F0] font-black flex items-center justify-center text-xl shadow-md border-2 border-[#D4A373]">
           Φ
         </span>
         <div>
-          <span class="serif-display font-bold text-2xl sm:text-3xl tracking-wider text-[#8F1C28]">PHI NGÃ</span>
-          <span class="block text-[11px] font-semibold text-[#234E43] uppercase tracking-[0.2em] -mt-1">Khai Sáng Vô Thức</span>
+          <span class="serif-display font-bold text-2xl sm:text-3xl tracking-wider text-[#E64A5A]">PHI NGÃ</span>
+          <span class="block text-[11px] font-semibold text-[#3DB89A] uppercase tracking-[0.2em] -mt-1">Khai Sáng Vô Thức</span>
         </div>
+      </a>
+
+      <!-- MENU LIÊN KẾT -->
+      <div class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+        <a href="#tang-sach" class="hover:text-[var(--accent-crimson)] transition">Tặng Ebook Phi Ngã</a>
+        <a href="#sach-giay" class="hover:text-[var(--accent-crimson)] transition">Sách Giấy Tác Phẩm</a>
+        <a href="#khoa-hoc" class="hover:text-[var(--accent-crimson)] transition">Khóa Thiền Nguyện</a>
+        <a href="#dong-hanh" class="hover:text-[var(--accent-crimson)] transition">Cố Vấn 6 Tháng</a>
       </div>
 
-      <div class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-[#52463B]">
-        <a href="#tang-sach" class="hover:text-[#8F1C28] transition">Tặng Ebook Phi Ngã</a>
-        <a href="#sach-giay" class="hover:text-[#8F1C28] transition">Sách Giấy Tác Phẩm</a>
-        <a href="#khoa-hoc" class="hover:text-[#8F1C28] transition">Khóa Thiền Nguyện</a>
-        <a href="#dong-hanh" class="hover:text-[#8F1C28] transition">Cố Vấn 6 Tháng</a>
-      </div>
+      <!-- NÚT CHUYỂN CHẾ ĐỘ SÁNG / TỐI & CTA -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        
+        <!-- NÚT TOGGLE MÀN HÌNH TỐI / SÁNG -->
+        <button onclick="toggleTheme()" id="theme_toggle_btn" class="flex items-center gap-1.5 px-3 py-2 rounded-full border transition text-xs font-bold shadow-sm" style="background-color: var(--bg-card); border-color: var(--border-highlight); color: var(--text-main);" title="Bật/Tắt Chế Độ Màn Hình Tối">
+          <span id="theme_btn_icon" class="text-sm">🌙</span>
+          <span id="theme_btn_text" class="hidden sm:inline">Màn hình tối</span>
+        </button>
 
-      <div class="flex items-center gap-3">
-        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#234E43] text-[#234E43] hover:bg-[#234E43] hover:text-white text-xs font-bold transition">
+        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#3DB89A] text-[#3DB89A] hover:bg-[#3DB89A] hover:text-stone-900 text-xs font-bold transition">
           Nhóm Zalo
         </a>
-        <a href="#nhan-ngay" class="bg-[#8F1C28] hover:bg-[#72151F] text-[#FDF9F0] text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition shadow-md border border-[#A62734]">
-          Tải Ebook Miễn Phí
+        
+        <a href="#nhan-ngay" class="bg-[#8F1C28] hover:bg-[#A82433] text-[#FDF9F0] text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full transition shadow-md border border-[#C53030]">
+          Tải Ebook
         </a>
       </div>
     </div>
   </nav>
 
   <!-- HERO SECTION: TẶNG EBOOK PHI NGÃ KHAI SÁNG VÔ THỨC -->
-  <header id="tang-sach" class="relative pt-12 pb-20 overflow-hidden">
+  <header id="tang-sach" class="relative pt-10 sm:pt-14 pb-20 overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -86,47 +145,47 @@
         <!-- Cột Bên Trái: Giới thiệu Ebook Phi Ngã -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAE2D0] border border-[#CDBFA8] text-[#52463B] text-xs font-semibold uppercase tracking-widest">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-widest shadow-sm" style="background-color: var(--accent-crimson-bg); border-color: var(--border-highlight); color: var(--accent-crimson);">
             🎁 Tặng Phẩm Ebook • Khai Sáng Vô Thức
           </div>
           
           <div class="space-y-2">
-            <h1 class="serif-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#8F1C28] leading-[1.05]">
+            <h1 class="serif-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#E64A5A] leading-[1.05]">
               PHI NGÃ
             </h1>
-            <p class="serif-display text-2xl sm:text-3xl text-[#234E43] italic tracking-wide">
+            <p class="serif-display text-2xl sm:text-3xl text-[#3DB89A] italic tracking-wide">
               — Khai Sáng Vô Thức —
             </p>
-            <p class="text-xs uppercase tracking-widest text-[#786A5C] font-semibold pt-1">
+            <p class="text-xs uppercase tracking-widest font-semibold pt-1 text-[var(--text-sub)]">
               Tác giả: NGUYỄN ANH THÁI • Ebook Độc Quyền Tại phinga.net
             </p>
           </div>
           
-          <p class="text-[#594C40] text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
+          <p class="text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal text-[var(--text-muted)]">
             Nhận tặng miễn phí cuốn Ebook <strong>"Phi Ngã — Khai Sáng Vô Thức"</strong> của Thầy Nguyễn Anh Thái. Tác phẩm giúp bạn thấu suốt 95% cơ chế vận hành của tâm trí vô thức, buông xả gánh nặng gồng gánh, làm dịu nỗi lo âu và chạm tới sự an lạc tự tại từ bên trong.
           </p>
 
           <!-- Ảnh minh họa Bìa Sách Phi Ngã & Lợi ích độc giả -->
           <div class="flex flex-col sm:flex-row items-center gap-6 pt-3 justify-center lg:justify-start">
-            <div class="w-36 sm:w-44 shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-[-2deg] hover:rotate-0 transition duration-300">
+            <div class="w-36 sm:w-44 shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#2E2822] rotate-[-2deg] hover:rotate-0 transition duration-300">
               <img src="bia_phi_nga.png" alt="Bìa sách Ebook Phi Ngã - Khai Sáng Vô Thức" class="w-full h-auto object-cover">
             </div>
             
-            <div class="space-y-2 text-left text-xs sm:text-sm text-[#594C40]">
+            <div class="space-y-2.5 text-left text-xs sm:text-sm text-[var(--text-muted)]">
               <div class="flex items-center gap-2">
-                <span class="text-[#234E43] font-bold text-base">✦</span>
+                <span class="text-[#3DB89A] font-bold text-base">✦</span>
                 <span>Giải mã cơ chế vô thức chi phối nỗi sợ và bất an</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="text-[#234E43] font-bold text-base">✦</span>
+                <span class="text-[#3DB89A] font-bold text-base">✦</span>
                 <span>Buông bỏ sự kiểm soát gò bó để đạt tự do nội tâm</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="text-[#234E43] font-bold text-base">✦</span>
+                <span class="text-[#3DB89A] font-bold text-base">✦</span>
                 <span>Nhận link tải Ebook PDF chất lượng cao sau 30 giây</span>
               </div>
               <div class="pt-2">
-                <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#234E43] hover:underline">
+                <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#3DB89A] hover:underline">
                   👉 Tham gia Nhóm Zalo cùng Chị & Trang ➔
                 </a>
               </div>
@@ -137,38 +196,38 @@
 
         <!-- Cột Bên Phải: Form Điền Nhận Ebook Phi Ngã -->
         <div id="nhan-ngay" class="lg:col-span-5">
-          <div class="vintage-card rounded-3xl p-6 sm:p-9 shadow-xl border-2 border-[#D8CCB5] relative vintage-border">
+          <div class="vintage-card rounded-3xl p-6 sm:p-9 shadow-2xl relative vintage-border">
             
             <div class="text-center mb-6">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-[#8F1C28] bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+              <span class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style="background-color: var(--accent-crimson-bg); border-color: var(--border-highlight); color: var(--accent-crimson);">
                 Tải Ebook Miễn Phí
               </span>
-              <h3 class="serif-display text-3xl font-bold text-[#26201B] mt-2">Nhận Ebook Phi Ngã</h3>
-              <p class="text-xs text-[#7A6B5C] mt-1">Hệ thống sẽ gửi link tải cuốn Ebook "Phi Ngã — Khai Sáng Vô Thức" về hộp thư của bạn sau 30 giây</p>
+              <h3 class="serif-display text-3xl font-bold mt-2 text-[var(--text-main)]">Nhận Ebook Phi Ngã</h3>
+              <p class="text-xs mt-1 text-[var(--text-sub)]">Hệ thống sẽ gửi link tải cuốn Ebook "Phi Ngã — Khai Sáng Vô Thức" về hộp thư của bạn sau 30 giây</p>
             </div>
 
             <form class="space-y-4" onsubmit="handleLeadSubmit(event)">
               <div>
-                <label class="block text-xs font-bold text-[#594C40] uppercase tracking-wider mb-1.5">Họ và Tên</label>
-                <input id="lead_name" type="text" required placeholder="Ví dụ: Hoàng Lan Anh" class="w-full px-4 py-3 rounded-xl bg-[#FAF7F0] border border-[#D5C9B3] focus:border-[#8F1C28] focus:bg-white outline-none text-sm transition">
+                <label class="block text-xs font-bold uppercase tracking-wider mb-1.5 text-[var(--text-muted)]">Họ và Tên</label>
+                <input id="lead_name" type="text" required placeholder="Ví dụ: Hoàng Lan Anh" class="w-full px-4 py-3 rounded-xl border outline-none text-sm transition" style="background-color: var(--bg-input); border-color: var(--border-main); color: var(--text-main);">
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-[#594C40] uppercase tracking-wider mb-1.5">Địa chỉ Email (Nhận sách)</label>
-                <input id="lead_email" type="email" required placeholder="lananh@gmail.com" class="w-full px-4 py-3 rounded-xl bg-[#FAF7F0] border border-[#D5C9B3] focus:border-[#8F1C28] focus:bg-white outline-none text-sm transition">
+                <label class="block text-xs font-bold uppercase tracking-wider mb-1.5 text-[var(--text-muted)]">Địa chỉ Email (Nhận sách)</label>
+                <input id="lead_email" type="email" required placeholder="lananh@gmail.com" class="w-full px-4 py-3 rounded-xl border outline-none text-sm transition" style="background-color: var(--bg-input); border-color: var(--border-main); color: var(--text-main);">
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-[#594C40] uppercase tracking-wider mb-1.5">Số điện thoại / Zalo</label>
-                <input id="lead_phone" type="tel" required placeholder="0912 345 678" class="w-full px-4 py-3 rounded-xl bg-[#FAF7F0] border border-[#D5C9B3] focus:border-[#8F1C28] focus:bg-white outline-none text-sm transition">
+                <label class="block text-xs font-bold uppercase tracking-wider mb-1.5 text-[var(--text-muted)]">Số điện thoại / Zalo</label>
+                <input id="lead_phone" type="tel" required placeholder="0912 345 678" class="w-full px-4 py-3 rounded-xl border outline-none text-sm transition" style="background-color: var(--bg-input); border-color: var(--border-main); color: var(--text-main);">
               </div>
 
-              <button type="submit" class="w-full py-4 rounded-xl bg-[#8F1C28] hover:bg-[#72151F] text-[#FDF9F0] font-bold text-sm tracking-wider uppercase shadow-lg shadow-rose-950/20 transition transform active:scale-95 border border-[#A62734]">
+              <button type="submit" class="w-full py-4 rounded-xl bg-[#8F1C28] hover:bg-[#A82433] text-[#FDF9F0] font-bold text-sm tracking-wider uppercase shadow-xl transition transform active:scale-95 border border-[#C53030]">
                 Tải Ebook Phi Ngã Miễn Phí ➔
               </button>
 
               <div class="pt-2 text-center">
-                <p class="text-[11px] text-[#8C7D6D] leading-tight">
+                <p class="text-[11px] leading-tight text-[var(--text-sub)]">
                   🔒 Bảo mật tuyệt đối. Bạn sẽ được nhận vé mời tham gia Workshop Zoom chuyên sâu hàng tuần cùng Chị, Trang và Thầy Thái.
                 </p>
               </div>
@@ -181,17 +240,17 @@
   </header>
 
   <!-- BỘ TÁC PHẨM SÁCH GIẤY: PHI DỤC & PHI NGÃ -->
-  <section id="sach-giay" class="py-20 bg-[#F4EFE4] border-y border-[#E2D6C0]">
+  <section id="sach-giay" class="py-20 border-y transition-colors duration-300" style="background-color: var(--bg-section-alt); border-color: var(--border-main);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold text-[#8F1C28] uppercase tracking-widest bg-rose-100/60 px-3.5 py-1 rounded-full border border-rose-200">
+        <span class="text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full border" style="background-color: var(--accent-crimson-bg); border-color: var(--border-highlight); color: var(--accent-crimson);">
           Bộ Tác Phẩm Nền Tảng
         </span>
-        <h2 class="serif-display text-4xl sm:text-5xl font-bold text-[#26201B] mt-3 mb-3">
+        <h2 class="serif-display text-4xl sm:text-5xl font-bold mt-3 mb-3 text-[var(--text-main)]">
           Hai Cuốn Sách Giấy Chuyển Hóa Nội Tâm
         </h2>
-        <p class="text-[#695B4E] text-sm sm:text-base">
+        <p class="text-sm sm:text-base text-[var(--text-muted)]">
           Được chấp bút bởi Thầy Nguyễn Anh Thái, mang triết lý sâu xa về sự buông bỏ bản ngã và thấu triệt dòng chảy tính nữ.
         </p>
       </div>
@@ -199,70 +258,70 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
         
         <!-- Cuốn 1: Phi Dục -->
-        <div class="vintage-card p-8 rounded-3xl border border-[#D8CCB5] flex flex-col justify-between hover:border-[#8F1C28] transition duration-300">
+        <div class="vintage-card p-8 rounded-3xl flex flex-col justify-between hover:border-[#E64A5A] transition duration-300">
           <div>
             <div class="flex items-center gap-4 mb-4">
-              <div class="w-16 h-24 rounded-lg overflow-hidden shadow-md shrink-0 border border-stone-200">
+              <div class="w-16 h-24 rounded-lg overflow-hidden shadow-md shrink-0 border border-[#3E352B]">
                 <img src="bia_phi_duc.png" alt="Phi Dục" class="w-full h-full object-cover">
               </div>
               <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-[#234E43] block">Tác Phẩm Mới Xuất Bản</span>
-                <h3 class="serif-display text-3xl font-bold text-[#8F1C28]">PHI DỤC</h3>
-                <p class="text-xs text-[#7A6B5C] font-semibold italic">— Chữa Lành Tính Nữ —</p>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#3DB89A] block">Tác Phẩm Mới Xuất Bản</span>
+                <h3 class="serif-display text-3xl font-bold text-[#E64A5A]">PHI DỤC</h3>
+                <p class="text-xs font-semibold italic text-[var(--text-sub)]">— Chữa Lành Tính Nữ —</p>
               </div>
             </div>
             
-            <p class="text-sm text-[#594C40] leading-relaxed mb-6">
+            <p class="text-sm leading-relaxed mb-6 text-[var(--text-muted)]">
               Đóa hồng đỏ nở rộ trên bìa sách tượng trưng cho sự khai nở của năng lượng tính nữ thiêng liêng. Cuốn sách giúp phái nữ trút bỏ gánh nặng gồng gánh, chữa lành tổn thương tiềm thức và sống an yên, rực rỡ đúng bản tính tự nhiên.
             </p>
 
-            <ul class="text-xs sm:text-sm text-[#594C40] space-y-2 mb-6">
-              <li class="flex items-center gap-2"><span class="text-[#234E43] font-bold">✓</span> Sách in ấn thẩm mỹ cổ điển, bìa dập nổi cao cấp</li>
-              <li class="flex items-center gap-2"><span class="text-[#234E43] font-bold">✓</span> Kèm cẩm nang bài tập chữa lành tính nữ 21 ngày</li>
+            <ul class="text-xs sm:text-sm space-y-2 mb-6 text-[var(--text-muted)]">
+              <li class="flex items-center gap-2"><span class="text-[#3DB89A] font-bold">✓</span> Sách in ấn thẩm mỹ cổ điển, bìa dập nổi cao cấp</li>
+              <li class="flex items-center gap-2"><span class="text-[#3DB89A] font-bold">✓</span> Kèm cẩm nang bài tập chữa lành tính nữ 21 ngày</li>
             </ul>
           </div>
 
-          <div class="pt-4 border-t border-[#EAE1CF] flex items-center justify-between gap-4">
+          <div class="pt-4 border-t flex items-center justify-between gap-4" style="border-color: var(--border-main);">
             <div>
-              <span class="text-xs text-[#8C7D6D] block">Giá Bìa Niêm Yết:</span>
-              <span class="text-xl font-bold text-[#8F1C28]">250.000 VNĐ</span>
+              <span class="text-xs block text-[var(--text-sub)]">Giá Bìa Niêm Yết:</span>
+              <span class="text-xl font-bold text-[#E5B54F]">250.000 VNĐ</span>
             </div>
-            <button onclick="openPaymentModal('Cuốn Sách: Phi Dục - Chữa Lành Tính Nữ', 250000, 'SACH PHIDUC')" class="px-6 py-3 rounded-full bg-[#8F1C28] hover:bg-[#72151F] text-white font-bold text-xs uppercase tracking-wider transition shadow">
+            <button onclick="openPaymentModal('Cuốn Sách: Phi Dục - Chữa Lành Tính Nữ', 250000, 'SACH PHIDUC')" class="px-6 py-3 rounded-full bg-[#8F1C28] hover:bg-[#A82433] text-white font-bold text-xs uppercase tracking-wider transition shadow">
               Đặt Mua Sách "Phi Dục" ➔
             </button>
           </div>
         </div>
 
         <!-- Cuốn 2: Phi Ngã -->
-        <div class="vintage-card p-8 rounded-3xl border border-[#D8CCB5] flex flex-col justify-between hover:border-[#234E43] transition duration-300">
+        <div class="vintage-card p-8 rounded-3xl flex flex-col justify-between hover:border-[#3DB89A] transition duration-300">
           <div>
             <div class="flex items-center gap-4 mb-4">
-              <div class="w-16 h-24 rounded-lg overflow-hidden shadow-md shrink-0 border border-stone-200">
+              <div class="w-16 h-24 rounded-lg overflow-hidden shadow-md shrink-0 border border-[#3E352B]">
                 <img src="bia_phi_nga.png" alt="Phi Ngã" class="w-full h-full object-cover">
               </div>
               <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-[#8F1C28] block">Tác Phẩm Cốt Lõi</span>
-                <h3 class="serif-display text-3xl font-bold text-[#234E43]">PHI NGÃ</h3>
-                <p class="text-xs text-[#7A6B5C] font-semibold italic">— Khai Sáng Tiềm Thức —</p>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#E64A5A] block">Tác Phẩm Cốt Lõi</span>
+                <h3 class="serif-display text-3xl font-bold text-[#3DB89A]">PHI NGÃ</h3>
+                <p class="text-xs font-semibold italic text-[var(--text-sub)]">— Khai Sáng Tiềm Thức —</p>
               </div>
             </div>
             
-            <p class="text-sm text-[#594C40] leading-relaxed mb-6">
+            <p class="text-sm leading-relaxed mb-6 text-[var(--text-muted)]">
               Cuốn sách khai mở về bản ngã và cơ chế vô thức chi phối hành vi con người. Giúp bạn nhìn thấu những cạm bẫy của tâm trí, thoát khỏi trạng thái kiểm soát quá mức để tìm thấy sự tự do đích thực.
             </p>
 
-            <ul class="text-xs sm:text-sm text-[#594C40] space-y-2 mb-6">
-              <li class="flex items-center gap-2"><span class="text-[#234E43] font-bold">✓</span> Nền tảng tri thức của Cộng Đồng Khai Sáng Vô Thức</li>
-              <li class="flex items-center gap-2"><span class="text-[#234E43] font-bold">✓</span> Tác phẩm gốc của bản Ebook tặng độc giả</li>
+            <ul class="text-xs sm:text-sm space-y-2 mb-6 text-[var(--text-muted)]">
+              <li class="flex items-center gap-2"><span class="text-[#3DB89A] font-bold">✓</span> Nền tảng tri thức của Cộng Đồng Khai Sáng Vô Thức</li>
+              <li class="flex items-center gap-2"><span class="text-[#3DB89A] font-bold">✓</span> Tác phẩm gốc của bản Ebook tặng độc giả</li>
             </ul>
           </div>
 
-          <div class="pt-4 border-t border-[#EAE1CF] flex items-center justify-between gap-4">
+          <div class="pt-4 border-t flex items-center justify-between gap-4" style="border-color: var(--border-main);">
             <div>
-              <span class="text-xs text-[#8C7D6D] block">Giá Bìa Niêm Yết:</span>
-              <span class="text-xl font-bold text-[#234E43]">250.000 VNĐ</span>
+              <span class="text-xs block text-[var(--text-sub)]">Giá Bìa Niêm Yết:</span>
+              <span class="text-xl font-bold text-[#E5B54F]">250.000 VNĐ</span>
             </div>
-            <button onclick="openPaymentModal('Cuốn Sách: Phi Ngã - Khai Sáng Tiềm Thức', 250000, 'SACH PHINGA')" class="px-6 py-3 rounded-full bg-[#234E43] hover:bg-[#183931] text-white font-bold text-xs uppercase tracking-wider transition shadow">
+            <button onclick="openPaymentModal('Cuốn Sách: Phi Ngã - Khai Sáng Tiềm Thức', 250000, 'SACH PHINGA')" class="px-6 py-3 rounded-full bg-[#1E4D40] hover:bg-[#2A6554] text-white font-bold text-xs uppercase tracking-wider transition shadow">
               Đặt Mua Sách "Phi Ngã" ➔
             </button>
           </div>
@@ -278,13 +337,13 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold text-[#234E43] uppercase tracking-widest bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
+        <span class="text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full border" style="background-color: var(--accent-jade-bg); border-color: var(--border-highlight); color: var(--accent-jade);">
           Chương Trình Cộng Đồng
         </span>
-        <h2 class="serif-display text-4xl sm:text-5xl font-bold text-[#26201B] mt-3 mb-3">
+        <h2 class="serif-display text-4xl sm:text-5xl font-bold mt-3 mb-3 text-[var(--text-main)]">
           Khóa Thiền Nguyện & Workshop Định Kỳ
         </h2>
-        <p class="text-[#695B4E] text-sm sm:text-base">
+        <p class="text-sm sm:text-base text-[var(--text-muted)]">
           Không gian tu dưỡng và đồng hành được tổ chức trực tiếp bởi Chị & Trang cùng sự cố vấn của Thầy Thái.
         </p>
       </div>
@@ -292,63 +351,63 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Khóa 1: Workshop Hàng Tuần -->
-        <div class="vintage-card p-7 rounded-3xl border border-[#D8CCB5] flex flex-col justify-between">
+        <div class="vintage-card p-7 rounded-3xl flex flex-col justify-between">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100/70 text-[#234E43] inline-block mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-3" style="background-color: var(--accent-jade-bg); color: var(--accent-jade);">
               Trực Tuyến Hàng Tuần
             </span>
-            <h3 class="serif-display text-2xl font-bold text-[#26201B] mb-2">Workshop Khai Sáng</h3>
-            <p class="text-xs text-[#8C7D6D] mb-4">Chủ trì: Chị & Trang • Khách mời: Thầy Thái</p>
-            <p class="text-sm text-[#594C40] leading-relaxed mb-4">
+            <h3 class="serif-display text-2xl font-bold mb-2 text-[var(--text-main)]">Workshop Khai Sáng</h3>
+            <p class="text-xs mb-4 text-[var(--text-sub)]">Chủ trì: Chị & Trang • Khách mời: Thầy Thái</p>
+            <p class="text-sm leading-relaxed mb-4 text-[var(--text-muted)]">
               Không gian hỏi đáp trực tiếp, lắng nghe và giải đáp mọi gút thắt tâm lý, giúp bạn tìm lại điểm tựa bình yên giữa cuộc sống bộn bề.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#EAE1CF]">
-            <span class="text-[#234E43] font-bold text-sm block mb-3">Miễn Phí Dành Riêng Cho Độc Giả</span>
-            <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center py-3 rounded-xl bg-[#FAF7F0] hover:bg-[#EAE2CF] text-[#26201B] text-xs font-bold uppercase tracking-wider transition border border-[#D5C9B3]">
+          <div class="pt-4 border-t" style="border-color: var(--border-main);">
+            <span class="text-[#3DB89A] font-bold text-sm block mb-3">Miễn Phí Dành Riêng Cho Độc Giả</span>
+            <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition border" style="background-color: var(--bg-card-alt); border-color: var(--border-main); color: var(--text-main);">
               Vào Nhóm Nhận Lịch Zoom
             </a>
           </div>
         </div>
 
         <!-- Khóa 2: Khóa Thiền Nguyện 30 Ngày (Nổi Bật) -->
-        <div class="vintage-card p-7 rounded-3xl border-2 border-[#8F1C28] shadow-lg flex flex-col justify-between relative bg-white">
+        <div class="vintage-card p-7 rounded-3xl border-2 border-[#E64A5A] shadow-2xl flex flex-col justify-between relative" style="background-color: var(--bg-card-highlight);">
           <div class="absolute -top-3 right-6 bg-[#8F1C28] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
             Cam Kết Kỷ Luật
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-rose-100/70 text-[#8F1C28] inline-block mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-3" style="background-color: var(--accent-crimson-bg); color: var(--accent-crimson);">
               30 Ngày Thực Hành
             </span>
-            <h3 class="serif-display text-2xl font-bold text-[#8F1C28] mb-2">Khóa Thiền Nguyện "Phi Dục"</h3>
-            <p class="text-xs text-[#8C7D6D] mb-4">Đóng cọc cam kết: 1.000.000 VNĐ</p>
-            <p class="text-sm text-[#594C40] leading-relaxed mb-4">
+            <h3 class="serif-display text-2xl font-bold mb-2 text-[#E64A5A]">Khóa Thiền Nguyện "Phi Dục"</h3>
+            <p class="text-xs mb-4 text-[var(--text-sub)]">Đóng cọc cam kết: 1.000.000 VNĐ</p>
+            <p class="text-sm leading-relaxed mb-4 text-[var(--text-muted)]">
               <strong>Hoàn lại 100% tiền cọc sau 30 ngày nếu hoàn thành đủ bài tập.</strong> Khóa học thực chiến giúp bạn tái sinh dòng năng lượng nữ tính, giải tỏa âu lo và thiết lập bình an sâu thẳm.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#EAE1CF]">
-            <span class="text-[#8F1C28] font-bold text-sm block mb-3">100% Hoàn Tiền Sau 30 Ngày</span>
-            <button onclick="openPaymentModal('Khóa Thiền Nguyện Phi Dục (30 Ngày)', 1000000, 'THIENNGUYEN PHIDUC')" class="w-full py-3.5 rounded-xl bg-[#8F1C28] hover:bg-[#72151F] text-white text-xs font-bold uppercase tracking-wider transition shadow">
+          <div class="pt-4 border-t" style="border-color: var(--border-main);">
+            <span class="text-[#E5B54F] font-bold text-sm block mb-3">100% Hoàn Tiền Sau 30 Ngày</span>
+            <button onclick="openPaymentModal('Khóa Thiền Nguyện Phi Dục (30 Ngày)', 1000000, 'THIENNGUYEN PHIDUC')" class="w-full py-3.5 rounded-xl bg-[#8F1C28] hover:bg-[#A82433] text-white text-xs font-bold uppercase tracking-wider transition shadow-lg">
               Đăng Ký & Quét VietQR ➔
             </button>
           </div>
         </div>
 
         <!-- Khóa 3: Chữa Lành Nỗi Lo Âu -->
-        <div class="vintage-card p-7 rounded-3xl border border-[#D8CCB5] flex flex-col justify-between">
+        <div class="vintage-card p-7 rounded-3xl flex flex-col justify-between">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-100/70 text-[#7A5222] inline-block mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-3" style="background-color: var(--accent-crimson-bg); color: var(--accent-gold);">
               Gói Trị Liệu
             </span>
-            <h3 class="serif-display text-2xl font-bold text-[#26201B] mb-2">Chữa Lành Nỗi Lo Âu</h3>
-            <p class="text-xs text-[#8C7D6D] mb-4">Lộ trình giải tỏa áp lực & sợ hãi</p>
-            <p class="text-sm text-[#594C40] leading-relaxed mb-4">
+            <h3 class="serif-display text-2xl font-bold mb-2 text-[var(--text-main)]">Chữa Lành Nỗi Lo Âu</h3>
+            <p class="text-xs mb-4 text-[var(--text-sub)]">Lộ trình giải tỏa áp lực & sợ hãi</p>
+            <p class="text-sm leading-relaxed mb-4 text-[var(--text-muted)]">
               Dành riêng cho những ai đối diện với tình trạng mất ngủ, căng thẳng kéo dài và cảm giác bất an vô cớ. Phương pháp tiếp cận gốc rễ từ tầng vô thức.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#EAE1CF]">
-            <span class="text-[#7A5222] font-bold text-sm block mb-3">Tư Vấn Cá Nhân Hóa</span>
-            <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center py-3 rounded-xl bg-[#FAF7F0] hover:bg-[#EAE2CF] text-[#26201B] text-xs font-bold uppercase tracking-wider transition border border-[#D5C9B3]">
+          <div class="pt-4 border-t" style="border-color: var(--border-main);">
+            <span class="text-[#E5B54F] font-bold text-sm block mb-3">Tư Vấn Cá Nhân Hóa</span>
+            <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition border" style="background-color: var(--bg-card-alt); border-color: var(--border-main); color: var(--text-main);">
               Liên Hệ Chị & Trang Tư Vấn
             </a>
           </div>
@@ -360,12 +419,12 @@
   </section>
 
   <!-- GÓI VIP ĐỒNG HÀNH 6 THÁNG: BẬC THẦY PHI NGÃ -->
-  <section id="dong-hanh" class="py-20 bg-[#26201B] text-[#E8DFC9] border-t border-[#3D352E]">
+  <section id="dong-hanh" class="py-20 bg-[#0C0A09] text-[#E8DFC9] border-t border-[#26201B]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       
-      <div class="p-8 sm:p-12 rounded-3xl border-2 border-[#D4A373]/30 bg-gradient-to-br from-[#2D251F] to-[#1F1A16] shadow-2xl relative overflow-hidden">
+      <div class="p-8 sm:p-12 rounded-3xl border-2 border-[#D4A373]/40 bg-gradient-to-br from-[#1A1612] to-[#100D0B] shadow-2xl relative overflow-hidden">
         
-        <div class="inline-block px-3.5 py-1 bg-[#D4A373]/20 text-[#D4A373] text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-[#D4A373]/30">
+        <div class="inline-block px-3.5 py-1 bg-[#D4A373]/20 text-[#E5B54F] text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-[#D4A373]/30">
           👑 Chương Trình Đồng Hành Cao Cấp Nhất
         </div>
         
@@ -379,26 +438,26 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-xs sm:text-sm text-[#DDD3C2]">
           <div class="flex items-center gap-2.5">
-            <span class="text-[#D4A373] font-bold text-base">✦</span> Cố vấn 1-1 chuyên sâu định kỳ cùng Thầy Thái
+            <span class="text-[#E5B54F] font-bold text-base">✦</span> Cố vấn 1-1 chuyên sâu định kỳ cùng Thầy Thái
           </div>
           <div class="flex items-center gap-2.5">
-            <span class="text-[#D4A373] font-bold text-base">✦</span> Tham dự các kỳ tĩnh dưỡng và khai mở trực tiếp
+            <span class="text-[#E5B54F] font-bold text-base">✦</span> Tham dự các kỳ tĩnh dưỡng và khai mở trực tiếp
           </div>
           <div class="flex items-center gap-2.5">
-            <span class="text-[#D4A373] font-bold text-base">✦</span> Kênh kết nối riêng biệt hỗ trợ chuyển hóa 24/7
+            <span class="text-[#E5B54F] font-bold text-base">✦</span> Kênh kết nối riêng biệt hỗ trợ chuyển hóa 24/7
           </div>
           <div class="flex items-center gap-2.5">
-            <span class="text-[#D4A373] font-bold text-base">✦</span> Số lượng giới hạn, chỉ nhận qua phỏng vấn
+            <span class="text-[#E5B54F] font-bold text-base">✦</span> Số lượng giới hạn, chỉ nhận qua phỏng vấn
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-6 border-t border-[#3D352E]">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-6 border-t border-[#2F2620]">
           <div>
             <span class="text-xs text-[#9E9080] uppercase tracking-wider block">Khoản Đầu Tư Chuyển Hóa:</span>
             <span class="text-3xl sm:text-4xl font-black text-[#E5B54F]">150.000.000 VNĐ</span>
           </div>
 
-          <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="px-8 py-4 rounded-full bg-gradient-to-r from-[#D4A373] to-[#E5B54F] hover:from-[#E5B54F] hover:to-[#D4A373] text-[#26201B] font-extrabold text-xs uppercase tracking-widest transition shadow-xl">
+          <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="px-8 py-4 rounded-full bg-gradient-to-r from-[#D4A373] to-[#E5B54F] hover:from-[#E5B54F] hover:to-[#D4A373] text-[#1A1612] font-extrabold text-xs uppercase tracking-widest transition shadow-xl">
             Đăng Ký Phỏng Vấn 1-1 ➔
           </a>
         </div>
@@ -408,127 +467,171 @@
   </section>
 
   <!-- POPUP MODAL: XÁC NHẬN NHẬN SÁCH & MỜI VÀO ZALO -->
-  <div id="leadModal" class="fixed inset-0 bg-stone-950/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-[#FFFEFA] rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border-2 border-[#D8CCB5] animate-in fade-in zoom-in duration-200">
-      <div class="w-16 h-16 rounded-full bg-emerald-100 text-[#234E43] flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-300">
+  <div id="leadModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="vintage-card rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border-2 border-[var(--border-highlight)] animate-in fade-in zoom-in duration-200" style="background-color: var(--bg-card);">
+      <div class="w-16 h-16 rounded-full bg-[#18352C] text-[#3DB89A] flex items-center justify-center text-3xl mx-auto mb-4 border border-[#3DB89A]">
         ✓
       </div>
-      <h3 class="serif-display text-3xl font-bold text-[#8F1C28] mb-1">Đăng Ký Thành Công!</h3>
-      <p class="text-[#594C40] text-sm mb-5 leading-relaxed">
+      <h3 class="serif-display text-3xl font-bold text-[#E64A5A] mb-1">Đăng Ký Thành Công!</h3>
+      <p class="text-sm mb-5 leading-relaxed text-[var(--text-muted)]">
         Cuốn Ebook <strong>"Phi Ngã — Khai Sáng Vô Thức"</strong> đã sẵn sàng để bạn đọc ngay:
       </p>
 
       <!-- Nút tải trực tiếp file PDF Phi Ngã -->
       <div class="mb-5">
-        <a href="PHI_NGA_KHAI_SANG_VO_THUC.pdf" download="PHI_NGA_KHAI_SANG_VO_THUC_THAY_THAI.pdf" class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#8F1C28] hover:bg-[#72151F] text-white font-bold text-xs uppercase tracking-wider shadow-lg transition">
+        <a href="PHI_NGA_KHAI_SANG_VO_THUC.pdf" download="PHI_NGA_KHAI_SANG_VO_THUC_THAY_THAI.pdf" class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#8F1C28] hover:bg-[#A82433] text-white font-bold text-xs uppercase tracking-wider shadow-lg transition">
           📥 BẤM VÀO ĐÂY ĐỂ TẢI FILE PDF SÁCH PHI NGÃ
         </a>
       </div>
 
-      <div class="p-4 rounded-2xl bg-[#F4EFE4] border border-[#D8CCB5] text-left mb-6">
-        <div class="flex items-center gap-2 font-bold text-[#234E43] text-sm mb-1">
+      <div class="p-4 rounded-2xl border text-left mb-6" style="background-color: var(--bg-card-alt); border-color: var(--border-main);">
+        <div class="flex items-center gap-2 font-bold text-[#3DB89A] text-sm mb-1">
           <span>💬 Bước quan trọng tiếp theo:</span>
         </div>
-        <p class="text-xs text-[#594C40] leading-relaxed mb-3">
+        <p class="text-xs leading-relaxed mb-3 text-[var(--text-muted)]">
           Mời bạn tham gia nhóm Zalo để nhận thông báo lịch Workshop Zoom trực tiếp cùng Chị, Trang và Thầy Thái:
         </p>
-        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center w-full py-3.5 rounded-xl bg-[#234E43] hover:bg-[#1A3B33] text-white font-bold text-xs uppercase tracking-wider shadow transition">
+        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block text-center w-full py-3.5 rounded-xl bg-[#1E4D40] hover:bg-[#2A6554] text-white font-bold text-xs uppercase tracking-wider shadow transition">
           👉 BẤM VÀO ĐÂY ĐỂ VÀO NHÓM ZALO
         </a>
       </div>
 
-      <button onclick="closeLeadModal()" class="text-[#8C7D6D] hover:text-[#594C40] text-xs font-semibold">
+      <button onclick="closeLeadModal()" class="text-xs font-semibold text-[var(--text-sub)] hover:text-[var(--text-main)]">
         Đóng cửa sổ này
       </button>
     </div>
   </div>
 
   <!-- POPUP MODAL: QUÉT VIETQR THANH TOÁN (CẢ 2 TÀI KHOẢN CHỊ NHUNG & TRANG) -->
-  <div id="paymentModal" class="fixed inset-0 bg-stone-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-[#FFFEFA] rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border-2 border-[#D8CCB5] my-8">
+  <div id="paymentModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="vintage-card rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border-2 border-[var(--border-highlight)] my-8" style="background-color: var(--bg-card);">
       
-      <div class="flex items-center justify-between pb-4 border-b border-[#EAE1CF] mb-4">
+      <div class="flex items-center justify-between pb-4 border-b mb-4" style="border-color: var(--border-main);">
         <div>
-          <span class="text-[11px] font-bold text-[#8F1C28] uppercase tracking-wider block">Thanh Toán Chuyển Khoản Tự Động</span>
-          <h3 id="modal_product_name" class="serif-display text-2xl font-bold text-[#26201B]">Khóa Thiện Nguyện "Phi Dục"</h3>
+          <span class="text-[11px] font-bold text-[#E64A5A] uppercase tracking-wider block">Thanh Toán Chuyển Khoản Tự Động</span>
+          <h3 id="modal_product_name" class="serif-display text-2xl font-bold text-[var(--text-main)]">Khóa Thiện Nguyện "Phi Dục"</h3>
         </div>
-        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-[#FAF7F0] text-[#594C40] hover:bg-[#EAE2CF] flex items-center justify-center text-sm font-bold border border-[#D5C9B3]">
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full text-sm font-bold border transition flex items-center justify-center" style="background-color: var(--bg-card-alt); border-color: var(--border-main); color: var(--text-main);">
           ✕
         </button>
       </div>
 
       <!-- Tab chọn tài khoản nhận tiền -->
       <div class="mb-4">
-        <label class="block text-xs font-bold text-[#594C40] uppercase tracking-wider mb-2">Chọn tài khoản thụ hưởng:</label>
+        <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-[var(--text-muted)]">Chọn tài khoản thụ hưởng:</label>
         <div class="grid grid-cols-2 gap-2 text-xs font-bold">
-          <button id="tab_tk1" onclick="switchAccount('nhung')" class="py-2.5 px-3 rounded-xl border-2 border-[#8F1C28] bg-rose-50/70 text-[#8F1C28] transition flex items-center justify-center gap-1.5 shadow-sm">
+          <button id="tab_tk1" onclick="switchAccount('nhung')" class="py-2.5 px-3 rounded-xl border-2 border-[#E64A5A] bg-[#2A181A] text-[#E64A5A] transition flex items-center justify-center gap-1.5 shadow-sm">
             <span>VCB • Vũ Tuyết Nhung</span>
           </button>
-          <button id="tab_tk2" onclick="switchAccount('trang')" class="py-2.5 px-3 rounded-xl border border-[#D5C9B3] bg-[#FAF7F0] text-[#594C40] hover:bg-[#EAE2CF] transition flex items-center justify-center gap-1.5">
+          <button id="tab_tk2" onclick="switchAccount('trang')" class="py-2.5 px-3 rounded-xl border border-[var(--border-main)] bg-[var(--bg-card-alt)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition flex items-center justify-center gap-1.5">
             <span>TCB • Phạm Thu Trang</span>
           </button>
         </div>
       </div>
 
       <!-- Khung hiển thị mã QR & Chi tiết CK -->
-      <div class="bg-[#FAF7F0] rounded-2xl p-5 border border-[#D8CCB5] text-center mb-4">
-        <div class="w-56 h-56 mx-auto bg-white p-2 rounded-2xl border border-[#D5C9B3] shadow-inner mb-3 flex items-center justify-center overflow-hidden">
+      <div class="rounded-2xl p-5 border text-center mb-4" style="background-color: var(--bg-card-alt); border-color: var(--border-main);">
+        <!-- NỀN TRẮNG CHO QR CODE ĐỂ CAMERA ĐIỆN THOẠI QUÉT DỄ DÀNG -->
+        <div class="w-56 h-56 mx-auto bg-white p-2.5 rounded-2xl border border-stone-300 shadow-inner mb-3 flex items-center justify-center overflow-hidden">
           <img id="qr_image" src="" alt="Mã VietQR" class="w-full h-full object-contain">
         </div>
 
-        <div class="space-y-1.5 text-xs text-left max-w-xs mx-auto text-[#594C40]">
-          <div class="flex justify-between py-1 border-b border-[#EAE1CF]">
-            <span class="text-[#8C7D6D]">Ngân hàng:</span>
-            <span id="txt_bank" class="font-bold text-[#26201B]">Vietcombank</span>
+        <div class="space-y-1.5 text-xs text-left max-w-xs mx-auto text-[var(--text-muted)]">
+          <div class="flex justify-between py-1 border-b" style="border-color: var(--border-main);">
+            <span class="text-[var(--text-sub)]">Ngân hàng:</span>
+            <span id="txt_bank" class="font-bold text-[var(--text-main)]">Vietcombank</span>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#EAE1CF]">
-            <span class="text-[#8C7D6D]">Số tài khoản:</span>
-            <span id="txt_stk" class="font-bold text-[#26201B] font-mono text-sm">0021001915794</span>
+          <div class="flex justify-between py-1 border-b" style="border-color: var(--border-main);">
+            <span class="text-[var(--text-sub)]">Số tài khoản:</span>
+            <span id="txt_stk" class="font-bold text-[var(--text-main)] font-mono text-sm">0021001915794</span>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#EAE1CF]">
-            <span class="text-[#8C7D6D]">Chủ tài khoản:</span>
-            <span id="txt_name" class="font-bold text-[#26201B]">VU TUYET NHUNG</span>
+          <div class="flex justify-between py-1 border-b" style="border-color: var(--border-main);">
+            <span class="text-[var(--text-sub)]">Chủ tài khoản:</span>
+            <span id="txt_name" class="font-bold text-[var(--text-main)]">VU TUYET NHUNG</span>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#EAE1CF]">
-            <span class="text-[#8C7D6D]">Số tiền:</span>
-            <span id="txt_amount" class="font-black text-[#8F1C28] text-sm">1.000.000 VNĐ</span>
+          <div class="flex justify-between py-1 border-b" style="border-color: var(--border-main);">
+            <span class="text-[var(--text-sub)]">Số tiền:</span>
+            <span id="txt_amount" class="font-black text-[#E5B54F] text-sm">1.000.000 VNĐ</span>
           </div>
           <div class="flex justify-between py-1">
-            <span class="text-[#8C7D6D]">Nội dung CK:</span>
-            <span id="txt_memo" class="font-bold text-[#234E43] font-mono">PHIDUC 0912345678</span>
+            <span class="text-[var(--text-sub)]">Nội dung CK:</span>
+            <span id="txt_memo" class="font-bold text-[#3DB89A] font-mono">PHIDUC 0912345678</span>
           </div>
         </div>
       </div>
 
-      <div class="p-3 bg-[#EAE2CF]/60 rounded-xl border border-[#D5C9B3] text-xs text-[#594C40] mb-4 text-center">
+      <div class="p-3 rounded-xl border text-xs mb-4 text-center text-[var(--text-muted)]" style="background-color: var(--bg-card); border-color: var(--border-main);">
         💡 Quét mã QR bằng App ngân hàng bất kỳ để tự động điền đúng số tiền và nội dung chuyển khoản.
       </div>
 
-      <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block w-full py-3.5 rounded-xl bg-[#234E43] hover:bg-[#1A3B33] text-white text-center font-bold text-xs uppercase tracking-wider shadow transition">
+      <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="block w-full py-3.5 rounded-xl bg-[#1E4D40] hover:bg-[#2A6554] text-white text-center font-bold text-xs uppercase tracking-wider shadow transition">
         ĐÃ CHUYỂN KHOẢN ➔ VÀO NHÓM ZALO XÁC NHẬN
       </a>
 
     </div>
   </div>
 
+  <!-- NÚT NỔI CHUYỂN MÀN HÌNH TỐI / SÁNG GÓC DƯỚI TRÁI -->
+  <div class="fixed bottom-5 left-5 z-40">
+    <button onclick="toggleTheme()" class="flex items-center gap-2 px-4 py-2.5 rounded-full shadow-2xl border transition transform hover:scale-105" style="background-color: var(--bg-card); border-color: var(--border-highlight); color: var(--text-main);">
+      <span id="floating_btn_icon" class="text-base">🌙</span>
+      <span id="floating_btn_text" class="text-xs font-bold">Màn hình tối</span>
+    </button>
+  </div>
+
   <!-- FOOTER -->
-  <footer class="bg-[#1C1714] text-[#A69785] py-12 border-t border-[#2F2722] text-xs">
+  <footer class="py-12 text-xs border-t transition-colors duration-300" style="background-color: #070605; border-color: var(--border-main); color: var(--text-sub);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="w-6 h-6 rounded-full bg-[#8F1C28] text-white font-bold flex items-center justify-center text-xs">Φ</span>
-        <span class="text-[#E8DFC9] font-bold">phinga.net</span>
+        <span class="text-[#E64A5A] font-bold">phinga.net</span>
         <span>• Cộng Đồng Khai Sáng Vô Thức</span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="text-[#D4A373] hover:underline">Nhóm Zalo Cộng Đồng</a>
+        <a href="https://zalo.me/g/hjq2jotsedc9dtedeh3y" target="_blank" class="text-[#E5B54F] hover:underline">Nhóm Zalo Cộng Đồng</a>
         <span>•</span>
         <span>Mọi quyền được bảo lưu © 2026.</span>
       </div>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT XỬ LÝ THANH TOÁN VÀ LEAD -->
+  <!-- JAVASCRIPT XỬ LÝ THEME, THANH TOÁN VÀ LEAD -->
   <script>
+    // --- QUẢN LÝ CHẾ ĐỘ MÀN HÌNH TỐI / SÁNG ---
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      try { localStorage.setItem('phinga_theme', theme); } catch(e) {}
+      
+      const isDark = theme === 'dark';
+      const icon = isDark ? '🌙' : '☀️';
+      const text = isDark ? 'Màn hình tối' : 'Màn hình sáng';
+
+      const navBtnIcon = document.getElementById('theme_btn_icon');
+      const navBtnText = document.getElementById('theme_btn_text');
+      const floatBtnIcon = document.getElementById('floating_btn_icon');
+      const floatBtnText = document.getElementById('floating_btn_text');
+
+      if (navBtnIcon) navBtnIcon.innerText = icon;
+      if (navBtnText) navBtnText.innerText = text;
+      if (floatBtnIcon) floatBtnIcon.innerText = icon;
+      if (floatBtnText) floatBtnText.innerText = text;
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    }
+
+    // MẶC ĐỊNH KHỞI TẠO: MÀN HÌNH TỐI (DARK MODE)
+    let initialTheme = 'dark';
+    try {
+      const saved = localStorage.getItem('phinga_theme');
+      if (saved) initialTheme = saved;
+    } catch(e) {}
+    setTheme(initialTheme);
+
+    // --- DỮ LIỆU SẢN PHẨM & TÀI KHOẢN ---
     let currentProduct = { name: 'Khóa Thiện Nguyện "Phi Dục"', price: 1000000, memo: 'PHIDUC' };
     let currentAccount = 'nhung';
 
@@ -616,11 +719,11 @@
       const tab2 = document.getElementById('tab_tk2');
 
       if (acc === 'nhung') {
-        tab1.className = 'py-2.5 px-3 rounded-xl border-2 border-[#8F1C28] bg-rose-50/70 text-[#8F1C28] transition flex items-center justify-center gap-1.5 shadow-sm';
-        tab2.className = 'py-2.5 px-3 rounded-xl border border-[#D5C9B3] bg-[#FAF7F0] text-[#594C40] hover:bg-[#EAE2CF] transition flex items-center justify-center gap-1.5';
+        tab1.className = 'py-2.5 px-3 rounded-xl border-2 border-[#E64A5A] bg-[#2A181A] text-[#E64A5A] transition flex items-center justify-center gap-1.5 shadow-sm';
+        tab2.className = 'py-2.5 px-3 rounded-xl border border-[var(--border-main)] bg-[var(--bg-card-alt)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition flex items-center justify-center gap-1.5';
       } else {
-        tab2.className = 'py-2.5 px-3 rounded-xl border-2 border-[#234E43] bg-emerald-50/70 text-[#234E43] transition flex items-center justify-center gap-1.5 shadow-sm';
-        tab1.className = 'py-2.5 px-3 rounded-xl border border-[#D5C9B3] bg-[#FAF7F0] text-[#594C40] hover:bg-[#EAE2CF] transition flex items-center justify-center gap-1.5';
+        tab2.className = 'py-2.5 px-3 rounded-xl border-2 border-[#3DB89A] bg-[#142620] text-[#3DB89A] transition flex items-center justify-center gap-1.5 shadow-sm';
+        tab1.className = 'py-2.5 px-3 rounded-xl border border-[var(--border-main)] bg-[var(--bg-card-alt)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition flex items-center justify-center gap-1.5';
       }
 
       updateQR();
